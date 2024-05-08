@@ -1,0 +1,85 @@
+.emoji {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; /* This will make the container full height */
+    font-size: 50px;
+    cursor: pointer;
+    border-style: solid;
+}
+
+#base-emoji {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 60px;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+}
+
+.in-works {
+    border-color: red;
+}
+
+.finished {
+    border-color: green;
+}
+
+
+.column {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+/* Basic Button Styles */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Button Hover Effect */
+.button:hover {
+    background-color: #45a049; /* Darker Green */
+}
+
+/* Button Active Effect */
+.button:active {
+    background-color: #3e8e41; /* Dark Green */
+}
+
+/* Button Disabled Styles */
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Button with Icon */
+.button.icon {
+    position: relative;
+    padding-left: 40px; /* Adjust based on icon size */
+}
+
+/* Icon Styles */
+.button.icon:before {
+    content: "\f054"; /* Unicode for Font Awesome icon, adjust as needed */
+    position: absolute;
+    left: 10px; /* Adjust based on button padding */
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "Font Awesome"; /* Replace with your icon font */
+    font-size: 20px; /* Adjust as needed */
+}

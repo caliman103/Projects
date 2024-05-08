@@ -1,0 +1,44 @@
+Include something to detect the browser theme (light or dark)
+
+What to include:
+    - Nav Bar
+        - Home
+        - About Me
+        - My Projects
+        - Contact Me
+
+    - Home Page
+        - Hero Image (Professional Image, Motto on Image) (Maybe not this, instead have the welcome message
+                                                            to one side and the dog section on the next.
+                                                            refer to headerExample.png for reference)
+        - Wecome message (my goals, aspirations, interests, )
+        - pixel rain image
+        - about me with link to page 
+        - Mini projects section with link to page
+
+    - About Me 
+        - Message about CAPE stuff acheivements
+        - Have a Bsc IT
+        - Cloud Computing Badge
+        - Kotlin stuff
+        - All experience (Work on roofs, Cashier, Business Analyst)
+        - Talk about some projects done at uwi, e.g. Laravel application, frameworks built, openGL, and Excel application 
+    
+    - My Projects
+        - Link to online repository
+        - Show screen recording of space runner and rise high
+        - Provide links to both games
+        - Show screen recording of change background, say number
+        - Show Screen recording of PONG++
+        - (Work on blender projects to showcase)
+
+    - Contact Me
+        - List reaons for contacting 
+            - business analyst
+            - software developer
+            - web developer
+            - systems administrator
+            - project manager experience
+            - project scoping
+            - debugging experience   
+        - Provide Contact Information 

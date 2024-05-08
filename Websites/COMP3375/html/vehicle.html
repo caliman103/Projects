@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <div class="container pb-5 mb-5">
+        <span class="tt help-icon" data-bs-placement="bottom" title="This page is for the entering and viewing of vehicle information.">
+            <i class="bi bi-info-circle"></i>
+        </span>
+        <!-- content title -->
+        <div class="text-center pb-3">
+            <p class="display-6">Vehicles</p>
+        </div>
+
+        <div class="container m-3">
+            <!-- NAV TABS -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="add-tab" data-bs-toggle="tab" data-bs-target="#add-panel" type="button" role="tab">Add New Vehicle</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="view-tab" data-bs-toggle="tab" data-bs-target="#view-panel" type="button" role="tab">View Records</button>
+                </li>
+            </ul>
+            <div class="tab-content border border-top-0">
+                <!-- Add New -->
+                <div class="tab-pane fade active show" role="tabpanel" id="add-panel">
+                    <form action="#" class="card-form" id="add-new-form">
+                        <div class="container">
+                            <div class="row justify-content-center p-3">
+                                <div class="col-9">
+                                    <!-- Card 1 - Contact information -->
+                                    <div class="card form-card">
+                                        <h5 class="card-header text-center">Vehicle Information</h5>
+                                        <div class="card-body px-3">
+                                            <!-- INPUTS -->
+                                            <div class="row justify-content-between">
+                                                <div class="col-lg-4">
+                                                    <label class="form-label " for="v-make">Make</label>
+                                                    <select name="v-make" id="v-make" class="form-control form-select make-select" required> 
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                        Must be correctly filled out
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-lg-4">
+                                                  <label class="form-label" for="v-model">Model</label>
+                                                  <select name="v-model" id="v-model" class="form-control form-select model-select" disabled required> 
+                                                    <!-- <option value="Yukon">Yukon</option> -->
+                                                  </select>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="form-label" for="v-year">Year Manufactured</label>
+                                                    <input type="number" min="2010" max="2023" value="2010" class="form-control form-input" name="v-year" id="v-year">
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4 justifiy-content-between">
+                                                <div class="col-6">
+                                                    <label class="form-label" for="v-vin">Vin</label>
+                                                    <input type="text" pattern="[\w,\.]{2,}[\w]" class="form-control form-input" name="v-vin" id="v-vin" required>
+                                                </div>
+                                                <div class="col-6">
+                                                    <label class="form-label" for="v-license">License Plate Number</label>
+                                                    <input type="text" pattern="[A-Z]\d{1,4}" class="form-control form-input" name="v-license" id="v-license" required>
+                                                </div>
+                                            </div>
+                                        
+                                            <!-- NAVIGATION BUTTONS -->
+                                            <div class="mt-5">
+                                                <button type="button" class="btn btn-primary float-end next-card">Preferences<i class="bi bi-chevron-compact-right"></i></button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- Card 2 - Preferences -->
+                                    <div class="card form-card">
+                                        <h5 class="card-header text-center">Preferences</h5>
+                                        <div class="card-body px-3">
+                                            <!-- INPUTS -->
+                                            <div class="row justify-content-around">
+                                                <div class="col-4">
+                                                    <label class="form-label" for="v-odometer">Odometer Reading</label>
+                                                    
+                                                    <div class="input-group">
+                                                        <input type="number" value="0" min="0" class="form-control form-input" name="v-odometer" id="v-odometer">
+                                                        <span class="input-group-text">Miles<i class="bi bi-speedometer ps-1"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label class="form-label" for="v-color">Color</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text"><i class="bi bi-palette2 ps-1"></i></span>
+                                                        <input type="color" class="form-control form-input h-auto" name="v-color" id="v-color">
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-center mt-4">
+                                                <div class="col-4 text-center">
+                                                    <div><label class="form-label" for="v-availability">Available</label></div>
+                                                    
+                                                    <input type="radio" class="form-input" id="v-availability-true" name="v-availability" value="Yes" required>
+                                                    <label for="v-availability-true">Yes</label><br>
+                                                    
+                                                    <input type="radio" class="form-input" id="v-availability-false" name="v-availability" value="No" required>
+                                                    <label for="v-availability-false">No</label><br>
+                                                </div>
+                                            </div>
+                                            <!-- NAVIGATION BUTTONS -->
+                                            <div class="mt-5">
+                                                <button type="button" class="btn btn-primary prev-card"><i class="bi bi-chevron-compact-left"></i>Vehicle Information</button>
+                                                <button type="submit" class="btn btn-primary float-end next-card" data-bs-toggle="modal" data-bs-target="#query-status-modal">
+                                                    Submit
+                                                    <div class="spinner-border spinner-border-sm d-none" role="status">
+                                                        <span class="visually-hidden">Loading...</span>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Modal -->
+                    <div class="modal fade" id="query-status-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Result</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div id="add-customer-modal" class="modal-body text-primary">
+                                    Looks like something went wrong. Please try again
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- View Records -->
+                <div class="tab-pane fade" role="tabpanel" id="view-panel">
+                    <div class="container">
+                        <div class="row justify-content-center p-3">
+                            <div class="col-10">
+                                <div class="card">
+                                    <h5 class="card-header text-center">Search Records</h5>
+                                    <div class="card-body px-3">
+                                        <form action="#">
+                                            <div class="container px-5">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">Make, Model & Year<i class="bi bi-car-front ps-1"></i></span>
+                                                            <input type="text" name="v-make-search-input" id="v-make-search-input" placeholder="Make" class="form-control search-field">
+                                                            <input type="text" name="v-model-search-input" id="v-model-search-input" placeholder="Model" class="form-control search-field">
+                                                            <input type="text" name="v-year-search-input" id="v-year-search-input" placeholder="Year" class="form-control search-field">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3">
+                                                    <div class="col-8">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">Vin<i class="bi bi-123 ps-1"></i></span>
+                                                            <input type="text" name="v-vin-search-input" id="v-vin-search-input" class="form-control search-field">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3">
+                                                    <div class="col-6">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">License Plate Number<i class="bi bi-123 ps-1"></i></span>
+                                                            <input type="text" name="v-license-search-input" id="v-license-search-input" class="form-control search-field">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">Available<i class="bi bi-ticket-detailed ps-1"></i></span>
+                                                            <input type="text" name="v-availability-search-input" id="v-availability-search-input" class="form-control search-field">
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="col-6">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">Odometer Reading<i class="bi bi-speedometer ps-1"></i></span>
+                                                            <input type="text" name="v-odometer-search-input" id="v-odometer-search-input" class="form-control search-field">
+                                                            <span class="input-group-text">Miles</span>
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                                <div class="row mt-3">
+                                                    <!-- <div class="col-4">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">Color<i class="bi bi-palette2 ps-1"></i></span>
+                                                            <input type="color" name="v-color-search-input" id="v-color-search-input" class="form-control h-auto search-field">
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                                <div class="row mt-3 justify-content-center">
+                                                    <div class="col-3 text-center" id="search-button">
+                                                        <button type="button" class="btn btn-primary">Search</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="search-results" class="d-none">
+                                        <!-- Display search results -->
+                                        <h5 class="card-header text-center">Search Results</h5>
+                                        <div class="card-body">
+                                            <div class="container">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-3 text-center">
+                                                        <div class="spinner-border d-none m-auto" role="status" id="search-results-load-icon">
+                                                            <span class="visually-hidden">Loading...</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                
+                                            <div class="accordion" id="search-results-display">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="../scripts/shared-script.js"></script>
+    <script src="../scripts/vehicle-script.js"></script>
+</body>

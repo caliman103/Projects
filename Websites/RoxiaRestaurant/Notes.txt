@@ -1,0 +1,42 @@
+There are Ambroxians, Zoraxians & Scoraxians 
+2 Sections
+    - Zone A
+    - Zone B
+
+Zone A
+    - Zoraxians & Scoraxians only
+    - If Ambroxians enter Zone A they die
+    - Two table with 15 seats each, one table for each race
+
+Zone B
+    - Zoraxians & Ambroxians only
+    - No Scoraxians at all
+    - 30 tables -> 5 rows of 6 tables
+    - table identified by unique number (1 - 30) -> only has one seat
+
+Restaurant Rules
+    - Only one diner can occupy a seat
+    - serves Zoron, scoron, ambron and elixon
+
+Races
+    - Ambroxians
+        - Maximum energy = 25 (Exceding this results in "death by greed")
+        - They hate all multiples of 6. If they get a seating allocation of 6 
+          they become enraged and this rage is contagious
+        - They eat zoro, scron and ambron, if they eat elixon their energy level
+          reaches full capacity
+        
+    - Scoraxians
+        - Maximum energy = 20 (Exceding this results in "death by greed")
+        - They find Zoraxiams weak
+        - Eat scoron and ambron, they have "death by alergic reaction" if they eat
+          zoron. Eating elixon depleted their energy
+    
+    - Zoraxians
+        - Maximum energy = 15 (Exceding this results in "death by greed")
+        - Become weak and defenceless if energy level is below 3
+        - Eat zoronn and ambron, if they eat scoron they only get half the value
+        - If they eat any amount of elixon, it increases their energy level by 25%
+        - They hunt Ambroxians and hunt in pairs
+        - An Ambroxian should not be seated with a Zoraxian to the front and back
+          or left and right.

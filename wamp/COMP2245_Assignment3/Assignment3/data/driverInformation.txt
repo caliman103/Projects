@@ -1,0 +1,59 @@
+[
+    [
+        {
+            ID: "1973-02-09-3043",
+            licenseNo: "135686819730209",
+            fName: "Andrew",
+            lName: "Pryor",
+            address1: "31 ",
+            address2: "Prior Park",
+            parish: "St. James",
+            password:"andrewPryor123"
+        },
+
+        {
+            ID: "1967-12-12-0404",
+            licenseNo: "143647819671212",
+            fName: "Jennifer",
+            lName: "Davis",
+            address1: "Wavell Ave",
+            address2: "Black Rock",
+            parish: "St. Michael",
+            password:"Anoth3rpass"
+
+        },
+
+        {
+            nationalId: "1979-04-22-1209",
+            licenseNo: "100893419790422",
+            fName: "Anderson",
+            lName: "Alleyne",
+            address1: "Lascelles Terrace",
+            address2: "The Pine",
+            parish: "St. Michael",
+            password:"thePassw0rd"
+        }
+    ],
+    [
+        {
+            employeeID: "11005457ADMN",
+            firstName: "Merissa",
+            lastName: "Halliwall",
+            password:"f1rst1Pa55"
+        },
+
+        {
+            employeeID: "11000907DRVR",
+            firstName: "Terold",
+            lastName: "Bostwick",
+            password:"secur3Acc3s5"
+        },
+
+        {
+        employeeID: "11001478CLRK",
+        firstName: "Vanda",
+        lastName: "Marshall",
+        password:"Oll1Ollip0ps"
+        }
+   ]
+]

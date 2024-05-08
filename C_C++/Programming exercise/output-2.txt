@@ -1,0 +1,8 @@
+88 94 96 48 59 
+Thread 1 from child exiting with id 140041455285824
+94 100 102 54 65 
+Smallest value = 54
+Largest value = 102
+Thread 2 from child exiting with id 140041446893120
+Thread printing from parent process id = 140041455285824
+Parent completed

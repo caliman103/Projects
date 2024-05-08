@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Blob Game</title>
+    <link rel="icon" href="green blob.png" type="image/x-icon">
+
+    <style>
+        #gameArea{
+           border: 4px solid green;
+        }
+
+        body{
+            height: 100vh;
+            background: linear-gradient(
+                0deg,
+                rgba(150, 13, 15, 1) 0%,
+                rgb(76, 45, 253) 100%
+            );
+
+            text-align: center;
+            overflow: hidden; /*hide scrollbar*/
+        }
+
+        h1{
+            font-family: Comic Sans MS;
+        }
+    </style>
+</head>
+<body>
+    <h1>Green Blob</h1>
+
+    <canvas id="gameArea" width="800" height="600"> </canvas>
+
+    <script src="index.js">
+
+    </script>
+</body>
+</html>

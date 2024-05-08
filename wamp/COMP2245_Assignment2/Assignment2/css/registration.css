@@ -1,0 +1,117 @@
+
+* 
+{
+    box-sizing: border-box;
+}
+
+[class *= "col-"]
+{
+    float: left; 
+    padding: 15px;
+      
+}
+
+
+body
+{
+    margin: auto;
+    width:50%;
+    border: 2px solid rgb(38, 0, 255);
+    margin-top:  2%;
+    margin-bottom:  2%;
+    padding-bottom: 4%;
+    text-align: center;
+   
+    
+}
+
+
+@media only screen and (max-width: 992px) 
+{
+    body
+    {
+        margin-top: 2%;
+        width: 85%;
+    }
+}
+
+.row::after 
+{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#logo
+{
+    width: 86px; 
+    height:80px;
+}
+    
+/*Declaring the width of the columns */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.button 
+{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    padding: 7px;
+    cursor: pointer;
+
+
+}
+
+
+
+label
+{
+    margin-right: 10px;
+}
+
+input
+{
+    padding: 5px;
+}
+
+p
+{
+    color: rgb(0, 0, 0);
+}
+
+
+
+.form-error
+{
+    border: 2px solid red;
+    border-radius: 4px;
+}
+
+.form-success
+{
+    border: 2px solid rgb(0, 255, 30);
+    border-radius: 4px;
+}
+
+.form-neutral
+{
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 0px;
+}
+
+.errorMsg
+{
+    color: red;
+}
+

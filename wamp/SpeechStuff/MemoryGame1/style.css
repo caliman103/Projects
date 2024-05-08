@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(87, 85, 254);
+
+}
+
+#main-content {
+    color: rgb(255, 247, 252);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh; /* This will make the container full height */
+    font-size: 100px;
+
+}

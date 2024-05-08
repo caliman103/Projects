@@ -1,0 +1,138 @@
+* 
+{
+    box-sizing: border-box;
+}
+
+[class *= "col-"]
+{
+    float: left; 
+    padding: 15px;
+      
+}
+
+
+body
+{
+    margin: auto;
+    width:70%;
+    border: 2px solid rgb(38, 0, 255);
+    margin-top:  5%; 
+    margin-bottom:  5%; 
+    padding-bottom: 8%;
+    text-align: center;
+   
+    
+}
+
+
+@media only screen and (max-width: 992px) 
+{
+    body
+    {
+        margin-top: 2%;
+        width: 85%;
+    }
+    .vehicle-input {
+        width:80%;
+    }
+}
+
+.row::after 
+{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/*Declaring the width of the columns */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+#logo
+{
+    width: 86px; 
+    height:80px;
+}
+
+
+#name
+{
+    float: left;
+}
+
+#ID
+{
+    float: right;
+}
+
+.vehicle-input {
+    padding:.5%;
+    margin-right:2%;
+    width:30%;
+}
+
+.vehicle-search-button {
+    padding:.5%;
+}
+
+.registered-table {
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:40px;
+    border-collapse: collapse;
+}
+
+.registered-table td, .registered-table th {
+    border: 1px solid #54392C;
+    text-align: center;
+    padding: 8px;
+}
+  
+.registered-table th {
+    background-color: #adb6cb;
+}
+
+.registered-table-links {
+    text-decoration: none;
+    color:black;
+}
+
+.registered-select {
+    padding:.5%;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.registered-showAll-button {
+    margin-top:40px;
+    padding: .5%;
+}
+
+.dropdown {
+    position:relative;
+    display:inline-block;
+    cursor:pointer;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(17, 59, 247, 0.171);
+    padding: 2px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+  

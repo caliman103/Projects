@@ -1,0 +1,43 @@
+body {
+    background-color: rgb(87, 85, 254);
+
+}
+
+#main-content {
+    color: rgb(255, 247, 252);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh; /* This will make the container full height */
+    font-size: 80px;
+
+}
+
+/* Style for text input */
+.text-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 30px;
+    width: 50%; /* Adjust width as needed */
+    margin: 0 auto; /* Center the input horizontally */
+    display: block; /* Ensure input is block-level for margin auto to work */
+    box-sizing: border-box;
+    outline: none;
+  }
+  
+  /* Style for text input when focused */
+  .text-input:focus {
+    border-color: #007bff; /* Change color as per your preference */
+    box-shadow: 0 0 5px #007bff; /* Change color as per your preference */
+  }
+  
+  /* Hide the input */
+  .hidden {
+    display: none;
+  }
+  
+  /* Show the input */
+  .visible {
+    display: block;
+  }

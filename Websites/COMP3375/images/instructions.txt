@@ -1,0 +1,5 @@
+This file is just here so it's parent folder will be uploaded in the initial commit.
+Delete this file when or if you add new files in your branch.
+From here on, any changes made should be on a branch other than the master branch and merged to it later.
+The master branch should probably only hold agreed upon or stable changes first implemented on other branches.
+A copy of this file exists in every major folder.

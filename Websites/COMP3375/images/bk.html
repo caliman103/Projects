@@ -1,0 +1,554 @@
+
+
+                                <!--Rental Status-->
+                                <div class="col-9">
+                                    <div class="card form-card">
+                                        <h5 class="card-header text-center">Rental Status</h5>
+                                        <div class="card-body px-3">
+                                            <!-- INPUTS -->
+                                            <div class="row justify-content-around">
+                                                <div class="col-4">
+                                                    <div><label class="form-label" for="v-rent">Vehicle Rented</label></div>
+                                                    <input type="radio" id="v-rent-true" name="v-rent" value="True">
+                                                    <label for="v-rent-true">True</label><br>
+                                
+                                                    <input type="radio" id="v-rent-false" name="v-rent" value="False">
+                                                    <label for="v-rent-false">False</label><br>
+                                                </div>
+                                                <div class="col-md-4">
+                                    
+                                    
+                                                    <label class="form-label" for="v-returndate">Return Date</label>
+                                    
+                                                        <input type="date" class="form-control form-input h-auto" name="v-returndate" id="v-returndate">
+                                    
+                                    
+                                    
+                                                    <label class="form-label" for="v-ofees">Outstanding Fees</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text"><i class="bi bi-currency-dollar ps-1"></i></span>
+                                    
+                                                        <input type="number" class="form-control form-input h-auto" name="v-ofees" id="v-ofees">
+                                    
+                                                    </div>
+                                    
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-center mt-4">
+                                    
+                                            </div>
+                                            <!-- NAVIGATION BUTTONS -->
+                                            <div class="mt-5">
+                                                <button type="button" class="btn btn-primary prev-card"><i class="bi bi-chevron-compact-left"></i>Rental Status</button>
+                                                <button type="button" class="btn btn-primary float-end next-card">Vehicle Condition<i class="bi bi-chevron-compact-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Vehicle Condition-->
+                                <div class="col-9">
+                                    <div class="card form-card">
+                                        <h5 class="card-header text-center">Vehicle Condition</h5>
+                                        <div class="card-body px-3">
+                                            <!-- INPUTS -->
+                                            <div class="row justify-content-around">
+                                                <div class="col-4">
+                                    
+                                                    <div class="col-4">
+                                    
+                                                        <label class="form-label" for="v-edamage">Existing Vehicle Damages</label>
+                                                        <input type="hidden" name="make-model-row-num" id="make-model-row-num" value="-1" num-inputs="0">
+                                                        <button type="button" class="btn btn-secondary mt-2" id="model-add-btn">Add</button>
+                                    
+                                                        <div><label class="form-label" for="v-ndamage">New Vehicle Damages Pre-Rent-Out</label></div>
+                                                        <input type="hidden" name="make-model-row-num" id="make-model-row-num" value="-1" num-inputs="0">
+                                                        <button type="button" class="btn btn-secondary mt-2" id="model-add-btn">Add</button>
+                                    
+                                                    </div>
+                                    
+                                    
+                                    
+                                                </div>
+                                    
+                                    
+                                                <div class="col-md-4">
+                                    
+                                    
+                                                    <label class="form-label" for="v-returndate">Return Date</label>
+                                    
+                                                        <input type="date" class="form-control form-input h-auto" name="v-returndate" id="v-returndate">
+                                    
+                                    
+                                    
+                                                    <label class="form-label" for="v-ofees">Outstanding Fees</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text"><i class="bi bi-currency-dollar ps-1"></i></span>
+                                    
+                                                        <input type="number" class="form-control form-input h-auto" name="v-ofees" id="v-ofees">
+                                    
+                                                    </div>
+                                    
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-center mt-4">
+                                    
+                                            </div>
+                                            <!-- NAVIGATION BUTTONS -->
+                                            <div class="mt-5">
+                                                <button type="button" class="btn btn-primary prev-card"><i class="bi bi-chevron-compact-left"></i>Rental Status</button>
+                                                <button type="button" class="btn btn-primary float-end next-card">Submit<i class="bi bi-chevron-compact-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                        <!-- Display search results -->
+                                        <h5 class="card-header text-center">Search Results</h5>
+                                        <div class="card-body">
+                                            <div class="spinner-border d-none" role="status" id="search-results-load-icon">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div>
+
+                                            <div class="accordion" id="search-results-display">
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                          <span class="me-5">John D. Doe</span><span class="">1111111111111</span>
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseOne" class="accordion-collapse collapse show">
+                                                        <!-- CUSTOMER INFORMATION -->
+                                                        <div class="text-center mt-3">
+                                                            <p class="h5">
+                                                                Customer Information
+                                                                <span class="tt" data-bs-placement="right" title="Edit Contact Information">
+                                                                    <button type="button" class="btn btn-success btn-sm toggle-content" toggle-target="#customer-info-view,#customer-info-edit"><i class="bi bi-pencil-square pe-none"></i></button>
+                                                                </span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="container">
+                                                            <div id="customer-info-view">
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <p><i class="bi bi-file-person pe-1"></i>John Dorothy Doe</p>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <p><i class="bi bi-123 pe-1 fw-bold">License #:</i>111-1111</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <form action="#" method="post" id="customer-info-edit" class="d-none mb-3">
+                                                                <div class="row justify-content-center">
+                                                                    <div class="col-6">
+                                                                        <label for="" class="form-label">License #</label>
+                                                                        <input type="text" name="customer-edit-search" id="customer-edit" class="form-control form-input">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row justify-content-center">
+                                                                    <div class="col-6">
+                                                                        <div>
+                                                                            <input type="radio" name="customer-edit" id="customer-edit-1" class="form-check-input form-input">
+                                                                            <label for="customer-edit-1" class="form-check-label">John Doe 11111</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            <input type="radio" name="customer-edit" id="customer-edit-2" class="form-check-input form-input">
+                                                                            <label for="customer-edit-2" class="form-check-label">John Doe 11111</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mt-3 justify-content-center">
+                                                                    <div class="col-3 text-center">
+                                                                        <button type="submit" class="btn btn-primary">Save</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <div class="my-5">
+                                                            <hr class="w-75 m-auto">
+                                                        </div>
+                                                        <!-- VEHICLE INFORMATION -->
+                                                        <div class="text-center mt-3">
+                                                            <p class="h5">
+                                                                Vehicle Information
+                                                                <span class="tt" data-bs-placement="right" title="Edit Contact Information">
+                                                                    <button type="button" class="btn btn-success btn-sm toggle-content" toggle-target="#vehicle-info-view,#vehicle-info-edit"><i class="bi bi-pencil-square pe-none"></i></button>
+                                                                </span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="container">
+                                                            <div id="vehicle-info-view">
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <p><i class="bi bi-car-front pe-1 fw-bold"></i>Toyota Yamui</p>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <p><i class="bi bi-123 pe-1 fw-bold">License Plate:</i>111-1111</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <form action="#" method="post" id="vehicle-info-edit" class="d-none">
+                                                                <div class="row justify-content-center">
+                                                                    <div class="col-6">
+                                                                        <label for="" class="form-label">License #</label>
+                                                                        <input type="text" name="vehicle-edit-search" id="vehicle-edit" class="form-control form-input">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row justify-content-center mt-3">
+                                                                    <div class="col-6">
+                                                                        <div>
+                                                                            <input type="radio" name="vehicle-edit" id="vehicle-edit-1" class="form-check-input form-input">
+                                                                            <label for="vehicle-edit-1" class="form-check-label">vroom vroom 11111</label>
+                                                                        </div>
+                                                                        <div>
+                                                                            <input type="radio" name="vehicle-edit" id="vehicle-edit-2" class="form-check-input form-input">
+                                                                            <label for="customer-edit-2" class="form-check-label">vroom vroom 11111</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mt-3 justify-content-center">
+                                                                    <div class="col-3 text-center">
+                                                                        <button type="submit" class="btn btn-primary">Save</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <div class="my-5">
+                                                            <hr class="w-75 m-auto">
+                                                        </div>
+                                                        <!-- RENTAL AGREEMENT -->
+                                                        <div class="text-center mt-3">
+                                                            <p class="h5">
+                                                                Rental Agreement
+                                                                <span class="tt" data-bs-placement="right" title="Edit Contact Information">
+                                                                    <button type="button" class="btn btn-success btn-sm toggle-content" toggle-target="#rental-agreement-view,#rental-agreement-edit"><i class="bi bi-pencil-square pe-none"></i></button>
+                                                                </span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="container">
+                                                            <div id="rental-agreement-view">
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <p><span class="fw-bold"><i class="bi bi-calendar me-1 fw-bold">Rental Date:</i></span>12-12-2020</p>
+                                                                        <p><span class="fw-bold"><i class="bi bi-currency-dollar me-1 fw-bold">Rental Rate:</i></span>$12 per day</p>
+                                                                        <p><span class="fw-bold"><i class="bi bi-chat-left-text me-1 fw-bold">Pre-Rental Comments:</i></span><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, odio. Obcaecati expedita consectetur consequatur blanditiis maiores nostrum aliquid vitae ratione!</p>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <p><span class="fw-bold"><i class="bi bi-calendar me-1 fw-bold">Expected Return Date:</i></span>12-15-2020</p>
+                                                                        <p><span class="fw-bold"><i class="bi bi-currency-dollar me-1 fw-bold">Additional Fees:</i></span>$50</p>
+                                                                        <p><span class="fw-bold"><i class="bi bi-calendar me-1 fw-bold">Pre-Rental Condition:</i></span>A</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <form action="#" method="post" id="rental-agreement-edit" class="d-none">
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <label for="" class="form-label">Rental Date</label>
+                                                                        <input type="date" name="rental-date-edit" id="rental-date-edit" class="form-control form-input">
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <label for="" class="form-label">Expected Return Date</label>
+                                                                        <input type="date" name="expected-return-date-edit" id="expected-return-date-edit" class="form-control form-input">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mt-3">
+                                                                    <div class="col-6">
+                                                                        <label for="" class="form-label">Rental Rate</label>
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
+                                                                            <input type="number" name="rental-rate-edit" id="rental-rate-edit" class="form-control form-input">
+                                                                            <span class="input-group-text">per Day</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <label for="" class="form-label">Aditional Fees</label>
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
+                                                                            <input type="number" name="additional-fees-edit" id="additional-fees-edit" class="form-control form-input">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mt-3">
+                                                                    <div class="col-6">
+                                                                        <label for="" class="form-label">Pre-Rental Comments</label>
+                                                                        <textarea name="pre-rent-comments-edit" id="pre-rent-comments-edit" cols="30" rows="10" class="form-control form-input"></textarea>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <label for="" class="form-label">Pre-Rental Condition</label>
+                                                                        <select name="pre-rent-condition-edit" id="pre-rent-condition-edit" class="form-select form-input">
+                                                                            <option value="A">A</option>
+                                                                            <option value="B">B</option>
+                                                                            <option value="C">C</option>
+                                                                            <option value="D">D</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mt-3 justify-content-center">
+                                                                    <div class="col-3 text-center">
+                                                                        <button type="submit" class="btn btn-primary">Save</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <div class="my-5">
+                                                            <hr class="w-75 m-auto">
+                                                        </div>
+                                                        <!-- RETURN STATUS -->
+                                                        <div class="text-center mt-3">
+                                                            <p class="h5">
+                                                                Return Status
+                                                                <span class="tt" data-bs-placement="right" title="Edit Contact Information">
+                                                                    <button type="button" class="btn btn-success btn-sm toggle-content" toggle-target="#return-status-view,#return-status-edit"><i class="bi bi-pencil-square pe-none"></i></button>
+                                                                </span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="container">
+                                                            <div id="return-status-view">
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <p><span class="fw-bold"><i class="bi bi-calendar me-1 fw-bold">Actual Return Date:</i></span>12-16-2020</p>
+                                                                        <p><span class="fw-bold"><i class="bi bi-chat-left-text me-1 fw-bold">Post-Rental Comments:</i></span><br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque, odio. Obcaecati expedita consectetur consequatur blanditiis maiores nostrum aliquid vitae ratione!</p>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <p><span class="fw-bold"><i class="bi bi-calendar me-1 fw-bold">Return Condition:</i></span>A</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <form action="#" method="post" id="return-status-view" class="d-none">
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <label for="" class="form-label">Actual Return Date</label>
+                                                                        <input type="date" name="actual-return-date-edit" id="actual-return-date-edit" class="form-control form-input">
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <label for="" class="form-label">Return Condition</label>
+                                                                        <select name="pre-rent-condition-edit" id="pre-rent-condition-edit" class="form-select form-input">
+                                                                            <option value="A">A</option>
+                                                                            <option value="B">B</option>
+                                                                            <option value="C">C</option>
+                                                                            <option value="D">D</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mt-3">
+                                                                    <div class="col-6">
+                                                                        <label for="" class="form-label">Post-Rental Comments</label>
+                                                                        <textarea name="post-rent-comments-edit" id="post-rent-comments-edit" cols="30" rows="10" class="form-control form-input"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mt-3 justify-content-center">
+                                                                    <div class="col-3 text-center">
+                                                                        <button type="submit" class="btn btn-primary">Save</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <div class="my-5">
+                                                            <hr class="w-75 m-auto">
+                                                        </div>
+                                                        <!-- PAYMENT -->
+                                                        <div class="text-center mt-3">
+                                                            <p class="h5">
+                                                                Payment
+                                                                <span class="tt" data-bs-placement="right" title="Edit Contact Information">
+                                                                    <button type="button" class="btn btn-success btn-sm toggle-content" toggle-target="#payment-view,#payment-edit"><i class="bi bi-pencil-square pe-none"></i></button>
+                                                                </span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="container">
+                                                            <div id="payment-view">
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <p><span class="fw-bold"><i class="bi bi-currency-dollar me-1 fw-bold">Rental Fees Due:</i></span>$40</p>
+                                                                        <p><span class="fw-bold"><i class="bi bi-currency-dollar me-1 fw-bold">Total Fees Paid:</i></span>$40</p>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <p><span class="fw-bold"><i class="bi bi-currency-dollar me-1 fw-bold">Additional Charges Due:</i></span>$20</p>
+                                                                        <p><span class="fw-bold"><i class="bi bi-currency-dollar me-1 fw-bold">Outstanding Charges:</i></span>$20</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <form action="" method="post" id="payment-edit" class="d-none">
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <label for="" class="form-label">Rental Fees Due</label>
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
+                                                                            <input type="number" name="rental-fees-due-edit" id="rental-fees-due-edit" class="form-control form-input">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <label for="" class="form-label">Additional Charges Due</label>
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
+                                                                            <input type="number" name="additional-charges-due-edit" id="additional-charges-due-edit" class="form-control form-input">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mt-3">
+                                                                    <div class="col-6">
+                                                                        <label for="" class="form-label">Rental Fees Due</label>
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
+                                                                            <input type="number" name="rental-fees-due-edit" id="rental-fees-due-edit" class="form-control form-input">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <label for="" class="form-label">Additional Charges Due</label>
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
+                                                                            <input type="number" name="additional-charges-due-edit" id="additional-charges-due-edit" class="form-control form-input">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row mt-3 justify-content-center">
+                                                                    <div class="col-3 text-center">
+                                                                        <button type="submit" class="btn btn-primary">Save</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                <div class="container">
+                                                    <div class="row"><span class="col-4"><i class="bi bi-car-front pe-1"></i>Toyota Yaris</span><span class="col-5"><i class="bi bi-123 pe-1 fw-bold">License Plate:</i>L9098</span></div>
+                                                </div>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse">
+                                                <!-- VEHICLE INFORMATION -->
+                                                <div class="text-center mt-3">
+                                                    <p class="h5">
+                                                        Vehicle Information
+                                                        <span class="tt" data-bs-placement="right" title="Edit Contact Information">
+                                                            <button type="button" class="btn btn-success btn-sm toggle-content" toggle-target="#vehicle-info-view,#vehicle-info-edit"><i class="bi bi-pencil-square pe-none"></i></button>
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="container">
+                                                    <div id="vehicle-info-view">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <p><i class="bi bi-car-front pe-1"></i>Toyota Yaris</p>
+                                                                <p><i class="bi bi-car-front pe-1 fw-bold">VIN:</i>1111111</p>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <p><i class="bi bi-123 pe-1 fw-bold">Year:</i>2010</p>
+                                                                <p><i class="bi bi-123 pe-1 fw-bold">License Plate:</i>L9098</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <form action="#" method="post" id="vehicle-info-edit" class="d-none">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <label for="" class="form-label">Make</label>
+                                                                        <select name="make-edit" id="make-edit" class="form-select form-input"></select>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <label for="" class="form-label">Model</label>
+                                                                        <select name="model-edit" id="model-edit" class="form-select form-input"></select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <label for="" class="form-label">Year</label>
+                                                                <input type="text" name="year-edit" class="form-control form-input" id="year-edit" placeholder="Year" value="1999">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-3">
+                                                            <div class="col-6">
+                                                                <label for="" class="form-label">VIN</label>
+                                                                <input type="text" name="vin-edit" id="vin-edit" class="form-control form-input" placeholder="VIN" value="1111111111111111">
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label for="" class="form-label">License Plate</label>
+                                                                <input type="text" name="license-edit" class="form-control form-input" id="license-edit" placeholder="License Plate" value="L9098">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-3 justify-content-center">
+                                                            <div class="col-3 text-center">
+                                                                <button type="submit" class="btn btn-primary">Save</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="my-5">
+                                                    <hr class="w-75 m-auto">
+                                                </div>
+                                                <!-- ADDITIONAL INFORMATION -->
+                                                <div class="text-center mt-3">
+                                                    <p class="h5">
+                                                        Additional Information
+                                                        <span class="tt" data-bs-placement="right" title="Edit Contact Information">
+                                                            <button type="button" class="btn btn-success btn-sm toggle-content" toggle-target="#additional-info-view,#additional-info-edit"><i class="bi bi-pencil-square pe-none"></i></button>
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                                <div class="container">
+                                                    <div id="additional-info-view">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <p><span class="fw-bold"><i class="bi bi-speedometer me-2">Odometer:</i></span>393939 miles</p>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="row">
+                                                                    <div class="col-1">
+                                                                        <span class="fw-bold"><i class="bi bi-palette2 me-1"></i></span>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <span><input type="color" class="form-control form-control-color" value="#563d7c" disabled></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <form action="#" method="post" id="additional-info-edit" class="d-none">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <label for="" class="form-label">Odometer</label>
+                                                                <input type="number" name="odometer-edit" id="odometer-edit" class="form-control form-input">
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <label for="" class="form-label">Color</label>
+                                                                <input type="color" name="color-edit" id="color-edit" class="form-control form-control-color form-input" value="#555555">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-3 justify-content-center">
+                                                            <div class="col-3 text-center">
+                                                                <button type="submit" class="btn btn-primary">Save</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <!-- SPACER ELEMENT -->
+                                                <div class="my-2"></div>
+                                            </div>
+                                        </div>

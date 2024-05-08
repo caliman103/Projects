@@ -1,0 +1,8 @@
+Enter a number between 5 and 15
+9 
+Sum of squares from 1 to 9 is 285
+Please enter 3 numbers between 5 and 20
+6
+8
+9
+The product of 6, 8 and 9 is 432

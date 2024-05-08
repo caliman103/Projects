@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- navbar -->
+    <div class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <span>
+                    CRMS
+                </span>
+            </a>
+
+            <!-- navbar button for collapsed navbar -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- navbar links -->
+            <div class="collapse navbar-collapse justify-content-end align-center text-light" id="main-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#" class="nav-link h5">Customers</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link h5">Rentals</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link h5">Vehicles</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link h5">Reports</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+ 
+
+    <div class="container">
+        <div class="row pt-5 justify-content-center">
+            <div class="col-3">
+                <button type="button" class="btn btn-primary select-vehicletype" id="make" >Get Vehicle make</button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-primary select-vehicletype" id="model">Get Vehicle model</button>
+            </div>
+            <div class="col-3">
+                <button type="button" class="btn btn-primary select-vehicletype" id="*">Get all recordsl</button>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+
+    <!-- nav page 1 -->
+    <div id="thingy-bingy"></div>
+
+    <!-- nav page 2 -->
+
+    <div class="bg-danger py-2" id="outer">
+        <div class="bg-primary py-2">
+            <div class="bg-secondary py-2">
+                
+            </div>
+        </div>
+    </div>
+
+  <!-- Button trigger modal -->
+<button id="modal-button" type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#query-status-modal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="query-status-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Result</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="add-customer-modal" class="modal-body">
+        Hello World
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+<div class="col-4">
+    <label class="form-label" for="v-rentstart">Rental Start Date</label>
+    <input type="date" class="form-control form-input"  name="v-rentperiod" id="v-rentstart" required>
+</div>
+<div class="col-4">
+    <label class="form-label" for="v-rentend">Rental End Date</label>
+    <input type="date" class="form-control form-input"  name="v-rentperiod" id="v-rentend" required>
+</div>
+
+<button id="date-button" type="button" class="btn btn-primary">
+    Date thing
+  </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="../scripts/test.js"></script>
+    <script src="../scripts/shared-script.js"></script>
+</body>
+</html>

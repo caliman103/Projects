@@ -1,0 +1,17 @@
+body {
+    background: black;
+}
+
+#canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid white;
+    background: rgb(14, 90, 52);
+}
+
+
+img {
+    display : none;
+}

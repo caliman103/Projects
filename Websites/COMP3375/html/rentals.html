@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentals & Returns</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <div class="container pb-5 mb-5">
+        <span class="tt help-icon" data-bs-placement="bottom" title="This page is for the entering and viewing of rental information.">
+            <i class="bi bi-info-circle"></i>
+        </span>
+        <!-- content title -->
+        <div class="text-center pb-3">
+            <p class="display-6">Rentals</p>
+        </div>
+
+        <div class="container m-3">
+            <!-- NAV TABS -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="add-tab" data-bs-toggle="tab" data-bs-target="#add-panel" type="button" role="tab">Add New Rental</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="view-tab" data-bs-toggle="tab" data-bs-target="#view-panel" type="button" role="tab">View Records</button>
+                </li>
+            </ul>
+            <!-- NAV CONTENT -->
+            <div class="tab-content border border-top-0">
+                <!-- Add New -->
+                <div class="tab-pane fade active show" role="tabpanel" id="add-panel">
+                    <form action="#" method="POST" class="card-form" id="add-new-form">
+                        <div class="container">
+                            <div class="row justify-content-center p-3">
+                                <div class="col-9">
+                                    <!-- Card 1 - Contact information -->
+                                    <div class="card form-card">
+                                        <h5 class="card-header text-center">Select Customer and Vehicle</h5>
+                                        <div class="card-body px-3">
+                                            <!-- INPUTS -->
+                                            <div class="row justify-content-between">
+                                                <div class="col-6">
+                                                    <label class="form-label">License Number<i class="bi bi-car-front ps-1"></i></label>
+                                                    <input type="text" pattern="[\d]{8,}" name="license-search-input" id="license-search-input" class="form-input form-control" required>
+                                                </div>
+                                                <!-- <div class="col-4">
+                                                    <label class="form-label">Vin<i class="bi bi-123 ps-1"></i></label>
+                                                    <input type="text" pattern="a" name="vin-search-input" id="vin-search-input" class="form-control form-input" required>
+                                                </div> -->
+                                                <div class="col-6">
+                                                    <label class="form-label">License Plate Number<i class="bi bi-123 ps-1"></i></label>
+                                                    <input type="text" pattern="[A-Z]\d{1,4}" name="lplate-search-input" id="lplate-search-input" class="form-control form-input" required>
+                                                </div>
+                                            </div>
+                                            <!-- NAVIGATION BUTTONS -->
+                                            <div class="mt-5">
+                                                <button type="button" class="btn btn-primary float-end next-card">Rental Agreement<i class="bi bi-chevron-compact-right"></i></button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!--Rental Agreement-->
+                                <div class="col-9">
+                                    <div class="card form-card">
+                                        <h5 class="card-header text-center">Rental Agreement</h5>
+                                        <div class="card-body px-3">
+                                            <!-- INPUTS -->
+                                            <div class="row justify-content-around">
+                                                <div class="col-4">
+                                                    <label class="form-label" for="v-rentstart">Rental Start Date</label>
+                                                    <input type="date" class="form-control form-input"  name="v-rentperiod-begin" id="v-rentperiod" required>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label class="form-label" for="v-rentalrate">Rental Rate</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text"><i class="bi bi-currency-dollar ps-1"></i></span>
+                                                        <input type="number" class="form-control form-input h-auto" min="0" step="0.01" name="v-rentalrate" id="v-rentalrate" required>
+                                                        <span class="input-group-text">per Day</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-around mt-4">
+                                                <div class="col-4">
+                                                    <label class="form-label" for="v-rentend">Rental End Date</label>
+                                                    <input type="date" class="form-control form-input"  name="v-rentperiod-end" id="v-rentperiod-end" required>
+                                                </div>
+                                                <div class="col-4">
+                                                    <label class="form-label" for="pre-rental-comments">Additional Fees</label>
+                                                    <!-- <textarea name="pre-rental-comments" id="pre-rental-comments" cols="30" rows="10"></textarea> -->
+                                                    <div class="input-group">
+                                                        <span class="input-group-text"><i class="bi bi-currency-dollar ps-1"></i></span>
+                                                        <input type="number" min="0" step="0.01" class="form-control form-input h-auto" name="v-fees" id="v-fees" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-around mt-3">
+                                                <div class="col-4">
+                                                    <label for="condition">Rental Condition</label>
+                                                    <select name="v-condition" id="v-condition" class="form-select form-select-m mb-3" required>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                        <option value="D">D</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="col-6">
+                                                    <label for="">Pre Rental Comments</label>
+                                                    <textarea name="pre-rental-comments" id="pre-rental-comments" cols="30" rows="10" required></textarea>
+                                                </div>
+                                            </div>
+                                            <!-- NAVIGATION BUTTONS -->
+                                            <div class="mt-5">
+                                                <button type="button" class="btn btn-primary prev-card"><i class="bi bi-chevron-compact-left"></i>Search License</button>
+                                                <button type="submit" class="btn btn-primary float-end next-card" data-bs-toggle="modal" data-bs-target="#query-status-modal">Submit<i class="bi bi-chevron-compact-right"></i></button>
+                                                <!-- <button type="button" class="btn btn-primary float-end next-card">Rental Status<i class="bi bi-chevron-compact-right"></i></button> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Modal -->
+                    <div class="modal fade" id="query-status-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Result</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div id="add-customer-modal" class="modal-body text-primary">
+                                    Looks like something went wrong. Please try again
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- View Records -->
+                <div class="tab-pane fade" role="tabpanel" id="view-panel">
+                    <div class="container">
+                        <div class="row justify-content-center p-3">
+                            <div class="col-10">
+                                <div class="card">
+                                    <h5 class="card-header text-center">Search Records</h5>
+                                    <div class="card-body px-3">
+                                        <form action="#">
+                                            <div class="container px-5">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">Name<i class="bi bi-person-circle ps-1"></i></span>
+                                                            <input type="text" name="fname-search-input" id="fname-search-input" placeholder="First Name" class="form-control search-field">
+                                                            <input type="text" name="mname-search-input" id="mname-search-input" placeholder="Middle Name" class="form-control search-field">
+                                                            <input type="text" name="lname-search-input" id="lname-search-input" placeholder="Last Name" class="form-control search-field">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3">
+                                                    <div class="col-8">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">License Number<i class="bi bi-car-front ps-1"></i></span>
+                                                            <input type="text" name="license-search-input" id="license-search-input" class="form-control search-field">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3">
+                                                    <div class="col-6">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">Vin<i class="bi bi-123 ps-1"></i></span>
+                                                            <input type="text" name="v-vin-search-input" id="v-vin-search-input" class="form-control search-field">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">License Plate Number<i class="bi bi-123 ps-1"></i></span>
+                                                            <input type="text" name="v-license-search-input" id="v-license-search-input" class="form-control search-field">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3 justify-content-center">
+                                                    <div class="col-3 text-center" id="search-button">
+                                                        <button type="button" class="btn btn-primary">Search</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="search-results" class="d-none">
+                                        <!-- Display search results -->
+                                        <h5 class="card-header text-center">Search Results</h5>
+                                        <div class="card-body">
+                                            <div class="container">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-3 text-center">
+                                                        <div class="spinner-border d-none m-auto" role="status" id="search-results-load-icon">
+                                                            <span class="visually-hidden">Loading...</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="accordion" id="search-results-display">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="vehicle-type-offcanvas">
+        <div class="offcanvas-header">
+            <h5>New Vehicle Type</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container">
+                <form action="#">
+                    <div class="row">
+                        <div class="col-6">
+                            <div id="new-make-input-offcanvas">
+                                <label for="new-make-input" class="form-label">New Make</label>
+                                <input type="text" name="new-make-input-text" id="new-make-input-text" class="form-control">
+                            </div>
+                            <div id="existing-make-input-offcanvas" class="d-none">
+                                <label for="new-make-input" class="form-label">Existing Makes</label>
+                                <select name="new-make-input-select" id="new-make-input-select" class="form-select make-select">
+                                </select>
+                            </div>
+                            <div class="py-1"><button class="btn btn-primary toggle-content" toggle-target="#new-make-input-offcanvas,#existing-make-input-offcanvas" type="button">Switch</button></div>
+                        </div>
+                        <div class="col-6">
+                            <label for="new-model-input" class="form-label">New Model</label>
+                            <input type="text" name="new-model-input" id="new-model-input" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="../scripts/shared-script.js"></script>
+    <script src="../scripts/rental-script.js"></script>
+</body>
+</html>

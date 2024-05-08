@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <div class="container pb-5 mb-5">
+        <span class="tt help-icon" data-bs-placement="bottom" title="This page is for the entering and viewing of customer information.">
+            <i class="bi bi-info-circle"></i>
+        </span>
+        <!-- content title -->
+        <div class="text-center pb-3">
+            <p class="display-6">Customers</p>
+        </div>
+
+        <div class="container m-3">
+            <!-- NAV TABS -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="add-tab" data-bs-toggle="tab" data-bs-target="#add-panel" type="button" role="tab">Add New</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="view-tab" data-bs-toggle="tab" data-bs-target="#view-panel" type="button" role="tab">View Records</button>
+                </li>
+            </ul>
+            <!-- NAV CONTENT -->
+            <div class="tab-content border border-top-0">
+                <!-- Add New -->
+                <div class="tab-pane fade active show" role="tabpanel" id="add-panel">
+                    <form action="customer.html" method="POST" class="card-form" id="add-new-form">
+                        <div class="container">
+                            <div class="row justify-content-center p-3">
+                                <div class="col-9">
+                                    <!-- Card 1 - Contact information -->
+                                    <div class="card form-card">
+                                        <h5 class="card-header text-center">Contact Information</h5>
+                                        <div class="card-body px-3">
+                                            <!-- INPUTS -->
+                                            <div class="row justify-content-between">
+                                                <div class="col-lg-4">
+                                                    <label class="form-label" for="f-name">First Name</label>
+                                                    <input type="text" pattern="[a-zA-Z-]+" class="form-control form-input" name="f-name" id="f-name" required="true">
+                                                    <div class="invalid-feedback">
+                                                        Must be correctly filled out
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="form-label" for="m-name">Middle Name</label>
+                                                    <input type="text" pattern="[a-zA-Z-]*" class="form-control form-input" name="m-name" id="m-name">
+                                                    
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <label class="form-label" for="l-name">Last Name</label>
+                                                    <input type="text" pattern="[a-zA-Z-]*" class="form-control form-input" name="l-name" id="l-name">
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4 justifiy-content-between">
+                                                <div class="col-6">
+                                                    <label class="form-label" for="address1">Address Line 1</label>
+                                                    <input type="text" pattern="\w[&#\w\s,\.\(\)]*" class="form-control form-input" name="address1" id="address1">
+                                                </div>
+                                                <div class="col-6">
+                                                    <label class="form-label" for="address2">Address Line 2</label>
+                                                    <input type="text" pattern="\w[&#\w\s,\.\(\)]*" class="form-control form-input" name="address2" id="address2">
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-between mt-4">
+                                                <div class="col-6">
+                                                    <label class="form-label" for="phone">Phone Number</label>
+                                                    <input type="tel" pattern="(\+?\d?\s?\(?(\d{3})*\)?\s?\d{3}-?\d{4})*" class="form-control form-input" name="phone" id="phone" >  
+                                                </div>
+                                                <div class="col-6">
+                                                    <label class="form-label" for="email">Email</label>
+                                                    <input type="email" class="form-control form-input" name="email" id="email">
+                                                </div>
+                                            </div>
+                                            <!-- NAVIGATION BUTTONS -->
+                                            <div class="mt-5">
+                                                <button type="button" class="btn btn-primary float-end next-card">Driver's License<i class="bi bi-chevron-compact-right"></i></button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- Card 2 - Driver's License -->
+                                    <div class="card form-card">
+                                        <h5 class="card-header text-center">Driver's License</h5>
+                                        <div class="card-body px-3">
+                                            <!-- INPUTS -->
+                                            <div class="row justify-content-between">
+                                                <div class="col-4">
+                                                    <label class="form-label" for="license">License Number</label>
+                                                    <input type="text" pattern="[\d]{8,}"  class="form-control form-input"  name="license" id="license" required>
+                                                    <div class="invalid-feedback">
+                                                        Must be correctly filled out
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <label class="form-label" for="license-exp">Expiration Date</label>
+                                                    <input type="date" class="form-control form-input" name="license-exp" id="license-exp" required>
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-between mt-4">
+                                                <div class="col-4">
+                                                    <label class="form-label" for="province">Issuing Province</label>
+                                                    <input type="text" pattern="\w[$#\w\s,\.\(\)]*" class="form-control form-input" name="province" id="province" required>
+                                                </div>
+                                            </div>
+                                            <!-- NAVIGATION BUTTONS -->
+                                            <div class="mt-5">
+                                                <button type="button" class="btn btn-primary prev-card"><i class="bi bi-chevron-compact-left"></i>Contact Information</button>
+                                                <button type="button" class="btn btn-primary float-end next-card">Payment Information<i class="bi bi-chevron-compact-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card 3 - Payment Information -->
+                                    <div class="card form-card">
+                                        <h5 class="card-header text-center">Payment Information</h5>
+                                        <div class="card-body px-3">
+                                            <!-- INPUTS -->
+                                            <div class="row justify-content-between">
+                                                <div class="col-4">
+                                                    <label class="form-label" for="card-type">Card Type</label>
+                                                    <select name="card-type" id="card-type" class="form-select form-input">
+                                                        <option value="visa">Visa</option>
+                                                        <option value="credit">Credit</option>
+                                                        <option value="debit">Debit</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-6">
+                                                    <label class="form-label" for="card-num">Card Number</label>
+                                                    <input type="text" pattern="\d[\d\s-]*\d" class="form-control form-input" name="card-num" id="card-num" required>
+                                                    <div class="invalid-feedback">
+                                                        Must be correctly filled out
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4">
+                                                <div class="col-4">
+                                                    <label class="form-label" for="card-exp">Expiration Date</label>
+                                                    <input type="date" class="form-control form-input" name="card-exp" id="card-exp" required>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4 justifiy-content-between">
+                                                <div class="col-6">
+                                                    <label class="form-label" for="billing-address1">Billing Address Line 1</label>
+                                                    <input type="text" pattern="\w[&#\w\s,\.\(\)]*" class="form-control form-input" name="billing-address1" id="billing-address1" required>
+                                                </div>
+                                                <div class="col-6">
+                                                    <label class="form-label" for="billing-address2">Billing Address Line 2</label>
+                                                    <input type="text" pattern="\w[&#\w\s,\.\(\)]*" class="form-control form-input" name="billing-address2" id="billing-address2">
+                                                </div>
+                                            </div>
+                                            <!-- NAVIGATION BUTTONS -->
+                                            <div class="mt-5">
+                                                <button type="button" class="btn btn-primary prev-card"><i class="bi bi-chevron-compact-left"></i>Driver's License</button>
+                                                <button type="button" class="btn btn-primary float-end next-card">Rental Preferenes<i class="bi bi-chevron-compact-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Card 4 - Rental Prefernces -->
+                                    <div class="card form-card">
+                                        <h5 class="card-header text-center">Rental Preferences</h5>
+                                        <div class="card-body px-3">
+                                            <!-- INPUTS -->
+                                            <div class="text-center">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-3 text-end">
+                                                        <h5>
+                                                            Vehicle Type
+                                                            <!-- button for vehicle type off-canvas -->
+                                                            <span class="tt" data-bs-placement="right" title="Create a new vehicle type"><button type="button" class="btn btn-success btn-sm" id="vehicle-type-offcanvas-btn" data-bs-toggle="offcanvas" data-bs-target="#vehicle-type-offcanvas"><i class="bi bi-plus-square"></i></button></span>
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="make-model-row-num" id="make-model-row-num" value="-1" num-inputs="0">
+                                                <button type="button" class="btn btn-secondary mt-2" id="model-add-btn">Add</button>
+                                            </div>
+                                            <!-- <div><hr class="w-75 m-auto my-3"></div> -->
+                                            <div class="text-center mt-4">
+                                                <h5>Rental Duration</h5> 
+                                                <input type="hidden" name="duration-row-num" id="duration-row-num" value="-1" num-inputs="0">
+                                                <button type="button" class="btn btn-secondary mt-2" id="duration-add-btn">Add</button>
+                                            </div>
+                                            <div class="text-center mt-4">
+                                                <h5>Pickup Location</h5> 
+                                                <input type="hidden" name="pickup-row-num" id="pickup-row-num" value="-1" num-inputs="0">
+                                                <button type="button" class="btn btn-secondary mt-2" id="pickup-add-btn">Add</button>
+                                            </div>
+                                            <div class="text-center mt-4">
+                                                <h5>Dropoff Location</h5> 
+                                                <input type="hidden" name="dropoff-row-num" id="dropoff-row-num" value="-1" num-inputs="0">
+                                                <button type="button" class="btn btn-secondary mt-2" id="dropoff-add-btn">Add</button>
+                                            </div>
+                                            <!-- NAVIGATION BUTTONS -->
+                                            <div class="mt-5">
+                                                <button type="button" class="btn btn-primary prev-card"><i class="bi bi-chevron-compact-left"></i>Payment Information</button>
+                                                <!-- <button type="submit" class="btn btn-primary float-end">
+                                                    Submit 
+                                                    <div class="spinner-border spinner-border-sm d-none" role="status">
+                                                        <span class="visually-hidden">Loading...</span>
+                                                    </div>
+                                                </button> -->
+
+                                                <!-- Button trigger modal --> 
+                                                 <button type="submit" id="modal-button" class="btn btn-primary float-end next-card" data-bs-toggle="modal" data-bs-target="#query-status-modal">
+                                                    Submit
+                                                    <div class="spinner-border spinner-border-sm d-none" role="status">
+                                                        <span class="visually-hidden">Loading...</span>
+                                                    </div>
+                                                </button>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Modal -->
+                    <div class="modal fade" id="query-status-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Result</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div id="add-customer-modal" class="modal-body text-primary">
+                                    Looks like something went wrong. Please try again
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end add new tab-->
+
+                <!-- View Records -->
+                <div class="tab-pane fade" role="tabpanel" id="view-panel">
+                    <div class="container">
+                        <div class="row justify-content-center p-3">
+                            <div class="col-10">
+                                <div class="card">
+                                    <h5 class="card-header text-center">Search Records</h5>
+                                    <div class="card-body px-3">
+                                        <form action="#">
+                                            <div class="container px-5">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">Name<i class="bi bi-person-circle ps-1"></i></span>
+                                                            <input type="text" name="fname-search-input" id="fname-search-input" placeholder="First Name" class="form-control search-field">
+                                                            <input type="text" name="mname-search-input" id="mname-search-input" placeholder="Middle Name" class="form-control search-field">
+                                                            <input type="text" name="lname-search-input" id="lname-search-input" placeholder="Last Name" class="form-control search-field">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3">
+                                                    <div class="col-8">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">License Number<i class="bi bi-car-front ps-1"></i></span>
+                                                            <input type="text" name="license-search-input" id="license-search-input" class="form-control search-field">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3">
+                                                    <div class="col-6">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">Phone<i class="bi bi-telephone ps-1"></i></span>
+                                                            <input type="text" name="phone-search-input" id="phone-search-input" class="form-control search-field">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="input-group">
+                                                            <span class="input-group-text">Email<i class="bi bi-envelope ps-1"></i></span>
+                                                            <input type="text" name="email-search-input" id="email-search-input" class="form-control search-field">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3 justify-content-center">
+                                                    <div class="col-3 text-center" id="search-button">
+                                                        <button type="button" class="btn btn-primary">Search</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="search-results" class="d-none">
+                                        <!-- Display search results -->
+                                        <h5 class="card-header text-center">Search Results</h5>
+                                        <div class="card-body">
+                                            <div class="container">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-3 text-center">
+                                                        <div class="spinner-border d-none m-auto" role="status" id="search-results-load-icon">
+                                                            <span class="visually-hidden">Loading...</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="accordion" id="search-results-display">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="vehicle-type-offcanvas">
+        <div class="offcanvas-header">
+            <h5>New Vehicle Type</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container">
+                <form action="#" method="POST" id="add-new-make-model-form" novalidate>
+                    <div class="row">
+                        <div class="col-6">
+                            <div id="new-make-input-offcanvas">
+                                <label for="new-make-input" class="form-label">New Make</label>
+                                <input type="text" name="new-make-input-text" id="new-make-input-text" class="toggle-to-empty form-input form-control" >
+                            </div>
+                            <div id="existing-make-input-offcanvas" class="d-none">
+                                <label for="new-make-input" class="form-label">Existing Makes</label>
+                                <select name="new-make-input-select" id="new-make-input-select" class="toggle-to-empty form-select make-select" >
+                                </select>
+                            </div>
+                            <div class="py-1"><button class="btn btn-primary toggle-content" toggle-target="#new-make-input-offcanvas,#existing-make-input-offcanvas" type="button">Switch</button></div>
+                        </div>
+                        <div class="col-6">
+                            <label for="new-model-input" class="form-label">New Model</label>
+                            <input type="text" name="new-model-input" id="new-model-input" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-3">
+                            <button type="submit"  class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                    <div class="d-none row justify-content-center" id="new-make-model-alert">
+                        <div class="mt-3 col-9  alert" role="alert">
+                            Record Successfully Added
+                          </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="../scripts/shared-script.js"></script>
+    <script src="../scripts/customer-script.js"></script>
+</body>
+</html>

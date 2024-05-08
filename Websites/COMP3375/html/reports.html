@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <div class="container pb-5 mb-5">
+        <span class="tt help-icon" data-bs-placement="bottom" title="This page is for the viewing of reports.">
+            <i class="bi bi-info-circle"></i>
+        </span>
+        <!-- content title -->
+        <div class="text-center pb-3">
+            <p class="display-6">Reports</p>
+        </div>
+
+        <div class="container m-3">
+            <!-- NAV TABS -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="add-tab" data-bs-toggle="tab" data-bs-target="#rental-history-panel" type="button" role="tab">Rental History</button>
+                </li>
+            </ul>
+            <div class="tab-content border border-top-0">
+                <!-- Add New -->
+                <div class="tab-pane fade active show" role="tabpanel" id="rental-history-panel">
+                    <div class="container">
+                        <div class="row justify-content-center p-3">
+                            <div class="col-10">
+                                <div class="card">
+                                    <h5 class="card-header text-center">View Rentals in Date Range</h5>
+                                    <div class="card-body px-3">
+                                        <form action="#" id="rental-history-form">
+                                            <div class="container px-5">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <label for="" class="form-label">Start Date</label>
+                                                        <input type="date" name="start-date" id="start-date" class="form-control search-field" value="2020-01-01">
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label for="" class="form-label">End Date</label>
+                                                        <input type="date" name="end-date" id="end-date" class="form-control search-field" value="2023-04-13">
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-3 justify-content-center">
+                                                    <div class="col-3 text-center" id="search-button">
+                                                        <button type="button" class="btn btn-primary">Search</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="rental-history-results" class="d-non">
+                                        <!-- Display search results -->
+                                        <h5 class="card-header text-center">Report Results</h5>
+                                        <div class="card-body">
+                                            <div class="container">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-3 text-center">
+                                                        <div class="spinner-border d-none m-auto" role="status" id="rental-history-results-load-icon">
+                                                            <span class="visually-hidden">Loading...</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                
+                                            <div class="container mt-3" id="rental-history-results-display">
+                                                <!-- <div class="mb-3 p-3 border-3 rounded">
+                                                </div>
+                                                <div class="mb-3 p-3 border rounded">
+                                                    <div class="row">
+                                                        <span class="col-3"><i class="bi bi-file-person pe-1"></i>Name</span>
+                                                        <span class="col-3"><i class="bi bi-car-front pe-1 fw-bold"></i>Make Model</span>
+                                                        <span class="col-3"><i class="bi bi-123 pe-1 fw-bold">License Plate:</i>License Plate</span>
+                                                        <span class="col-3"><i class="bi bi-123 pe-1 fw-bold">Rental Date:</i>Rental Date</span>
+                                                    </div>
+                                                    <div class="row">
+                                                        <span class="col-3"><i class="bi bi-file-person pe-1"></i>Rental Rate</span>
+                                                        <span class="col-3"><i class="bi bi-car-front pe-1 fw-bold"></i>Make Model</span>
+                                                        <span class="col-3"><i class="bi bi-123 pe-1 fw-bold">License Plate:</i>License Plate</span>
+                                                        <span class="col-3"><i class="bi bi-123 pe-1 fw-bold">Rental Date:</i>Rental Date</span>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                                
+                <!-- <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-${record['cust_id']}${record['vehicle_id']}${record['rental_date']}" aria-expanded="true" aria-controls="collapseOne">
+                    <div class="container">
+                        <div class="row">
+                            <span class="col-3"><i class="bi bi-file-person pe-1"></i>${record['first_name']} ${record['middle_name']} ${record['last_name']}</span>
+                            <span class="col-3"><i class="bi bi-car-front pe-1 fw-bold">:</i>${record['make']} ${record['model']}</span>
+                            <span class="col-3"><i class="bi bi-123 pe-1 fw-bold">License Plate:</i>${record['license_plate']}</span>
+                            <span class="col-3"><i class="bi bi-123 pe-1 fw-bold">Rental Date:</i>${record['rental_date']}</span>
+                        </div>
+                    </div>
+                    </button>
+                </h2> -->
+            
+                <!-- View Records -->
+                <div class="tab-pane fade" role="tabpanel" id="late-return-panel">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="../scripts/shared-script.js"></script>
+    <script src="../scripts/report-script.js"></script>
+</body>

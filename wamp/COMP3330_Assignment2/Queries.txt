@@ -1,0 +1,72 @@
+index.php
+Query for table
+1 Query
+mysql->"SELECT CONCAT(FirstName, ' ', LastName) AS 'Student Name', CONCAT(ClassLevel, '-', ClassSuffix) AS 'Class'  FROM student";
+
+
+View indivdual student 
+2 Queries
+mysql->"SELECT studid, CONCAT(FirstName, ' ',MiddleName, ' ', LastName) AS 'Student Name', BirthDate, Address, CONCAT(Classlevel, '-', ClassSuffix) AS Class, CONCAT(ParentPhoneNumber,', ', ParentEmail) AS 'Parent Information', Enrolled, LoanFeePaid, RepairCost  FROM student WHERE studid =" . $_REQUEST['studentID'];
+
+mysql->"SELECT MAX(studid) AS 'maxID', MIN(studid) AS 'minID' FROM STUDENT";
+
+Search results
+/================remember to end this query with echo ';' before executing it i.e after checks were done====================/
+
+
+
+
+editStudent
+Query
+mysql->"UPATE STUDENT SET {colname} = {colvalue}, {colname} = {colvalue}, etc WHERE studid =" . $_REQUEST['studentID'];
+
+
+Search (birthdate part)
+mysql->SELECT studid, firstname, birthdate FROM student WHERE birthdate LIKE '2009%'
+
+/=======Get max ID for ID range=========/
+mysql->SELECT MAX(studid) AS 'maxID' FROM STUDENT;
+
+/=======Get min id for id range========/
+mysql->SELECT MIN(studid) AS 'maxID' FROM STUDENT;
+
+
+editOne.php
+mysql->"SELECT studid, CONCAT(firstname, ' ', middlename, ' ', lastname) AS Name, birthdate, ClassLevel, ClassSuffix, Enrolled, LoanFeePaid, Address, RIGHT(ParentPhoneNumber, 8) AS ParentNumber, ParentEmail, RepairCost FROM student WHERE studid =" . $_REQUEST['studid'];
+
+editOneHandler
+mysql-> UPATE student SET <addtibutes and values user entered in the editOne.php form> WHERE <studentID of the student being updated>
+
+CHANGES FOR WRITEUP
+-	Changed the studentID's from starting at 1000 to starting 1 one 
+
+-	Changed how informaiton is displayed on StudentInformation.php. Concatanated the ParentEmail and
+	parentPhoneNumer into Parent Information (separated by a comma).
+	
+
+-	When adding a record users must enter all student information. No nulls allowed.
+
+
+-	Parent phone number must start with 1 246-
+
+-	Changed length of parent email to 50 since 20 was too small and some emails were being cut off
+
+
+
+Innovations
+AddStudent.php
+-	Users can hover over question mark to see the format required for each input field
+
+-
+
+
+SearchStudent.php
+-	Most of the information the user will enter will come from a dropdown box which reduces the chances of errors occuring on
+	of the user. There is also a regular expression on the only input fields which further decreases the chance of a feiled
+	seacrch being performed as a resukt of the data being entered.
+
+-	The user does not need to enter any informaiton and the search still works. In this case all students will be returned
+
+
+-	After the serach has been performed there will be a link to the edit page for each student provided so the user can
+	edit one of the students they searched for straight after the search was performed.

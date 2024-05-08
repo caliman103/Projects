@@ -1,0 +1,19 @@
+
+.emoji, #base-emoji {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; /* This will make the container full height */
+    font-size: 60px;
+    cursor: pointer;
+
+}
+
+.container {
+    display: flex;
+}
+
+.column {
+    display: inline-block;
+    margin-left: 40px;
+}

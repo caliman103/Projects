@@ -1,0 +1,157 @@
+Question 1:
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+int sum1 = 0; 
+int sum2 = 0;
+int sum3 = 0;
+
+void *func1();
+void *func2();
+void *func3();
+
+int main() {
+    pthread_t thread1, thread2, thread3;
+
+    pthread_create(&thread1, NULL, func1, NULL);
+    pthread_create(&thread2, NULL, func2, NULL);
+    pthread_create(&thread3, NULL, func3, NULL);
+
+    pthread_join(thread1, NULL);
+    pthread_join(thread2, NULL);
+    pthread_join(thread3, NULL);
+
+    printf("Total is :%d\n", (sum1+sum2+sum3));
+}
+
+
+void *func1() {
+    for(int i = 1; i <= 100; i++) {
+        sum1 += i;
+    }
+    printf("Sum of 1 to 100 = %d\n", sum1);
+}
+void *func2() {
+    for(int i = 101; i <= 200; i++) {
+        sum2 += i;
+    }
+    printf("Sum of 101 to 200 = %d\n", sum2);
+}
+void *func3() {
+    for(int i = 201; i <= 300; i++) {
+        sum3 += i;
+    }
+    printf("Sum of 201 to 300 = %d\n", sum3);
+}
+
+
+Question 2:
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+
+//#define MAX = 60;
+
+int numbers[60];
+
+void *printer1();
+void *printer2();
+void *printer3();
+
+
+
+int main() {
+    pthread_t thread1,thread2, thread3;
+
+    pthread_create(&thread1, NULL, printer1, NULL);
+    pthread_create(&thread2, NULL, printer2, NULL);
+    pthread_create(&thread3, NULL, printer3, NULL);
+
+    pthread_join(thread1, NULL);
+    pthread_join(thread2, NULL);
+    pthread_join(thread3, NULL);
+
+    for(int i = 0; i < 60; i++) {
+        printf("%d  ", numbers[i]);
+    }
+}
+
+void *printer1() {
+    for(int i = 0; i < 20; i++) {
+        numbers[i] = i +1;
+    }
+}
+void *printer2() {
+    for(int i = 20; i < 40; i++) {
+        numbers[i] = i +1;
+    }
+}
+void *printer3() {
+    for(int i = 40; i < 60; i++) {
+        numbers[i] = i +1;
+    }
+}
+
+
+
+
+Question 3:
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <pthread.h>
+
+pthread_mutex_t mutex;
+int func2result = 0;
+
+void *func1();
+void *func2();
+
+int main()
+{
+    pthread_t thread1, thread2;
+    pthread_mutex_init(&mutex, NULL);
+
+    
+    pthread_create(&thread2, NULL, func2, NULL);
+    pthread_create(&thread1, NULL, func1, NULL);
+
+    pthread_join(thread2, NULL);
+    pthread_join(thread1, NULL);
+
+    pthread_mutex_destroy(&mutex);
+
+    return 0;
+}
+
+void *func1()
+{
+    pthread_mutex_lock(&mutex);
+    int num, sum;
+    num = sum = 0;
+    float quotient = 0.0;
+    printf("Please enter a number\n");
+    scanf("%d", &num);
+    for (int i = 1; i <= num; i++)
+    {
+        sum += i;
+    }
+    printf("Sum: %d\n", sum);
+    if(func2result == 0) func2result = 1;
+    quotient = (float)sum / (float)func2result;
+    printf("Quotient %.2f\n", quotient);
+    pthread_mutex_unlock(&mutex);
+}
+
+void *func2()
+{
+    pthread_mutex_lock(&mutex);
+    int num1, num2, num3;
+    num1 = num2 = num3 = 0;
+    printf("Please enter 3 numbers\n");
+    scanf("%d%d%d", &num1, &num2, &num3);
+    func2result = (num1 + num2 + num3);
+    printf("%d + %d + %d = %d\n", num1, num2, num3, func2result);
+    pthread_mutex_unlock(&mutex);
+}
